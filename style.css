@@ -1,0 +1,65 @@
+/*
+Theme Name: ZM Services
+Author: Joshua Stoltz
+Description: Custom theme converted from my hand-coded Z&M Services site.
+Version: 0.6
+*/
+
+/* The site's real styles live in assets/css/styles.css (copied unchanged from the
+   hand-coded site). This file holds the theme header above, which WordPress
+   requires, plus the few rules that only exist because of WordPress. */
+
+/* When you're logged in, WordPress adds an admin bar across the top of the page.
+   Move the sticky navbar down so the bar doesn't cover it. */
+.admin-bar .navbar {
+  top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar .navbar {
+    top: 46px;
+  }
+}
+
+/* Under 600px the admin bar scrolls away with the page, so the navbar goes back to the top. */
+@media screen and (max-width: 600px) {
+  .admin-bar .navbar {
+    top: 0;
+  }
+}
+
+/* The homepage's "Get a Free Quote" button jumps to the quote form on the Contact
+   page (#quote). Leave room above it so the sticky navbar doesn't cover the heading. */
+#quote {
+  scroll-margin-top: 110px;
+}
+
+/* The message shown above a form after it's submitted (see zm_form_notice() in
+   functions.php). It has its own background so it reads on both the dark
+   homepage section and the white Contact card. */
+.form-notice {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-left: 4px solid;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  text-align: left;
+}
+
+.form-notice-success {
+  background: #EAF6EC;
+  border-color: #2E7D32;
+}
+
+.form-notice-error {
+  background: #FDECEA;
+  border-color: #C62828;
+}
+
+/* Shown on the Gallery page when there are no projects in the dashboard yet. */
+.gallery-empty {
+  text-align: center;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+}
